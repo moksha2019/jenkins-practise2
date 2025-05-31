@@ -1,11 +1,12 @@
 pipeline {
-  agent  any {
-    stages {
-      stage {
-        echo "hello world !!! "
-        echo "added webhook link in the  jeninsfile!!!"
-        echo "added a new line of  code: "
+    agent  any
+    {
+      stages {
+        stage ("Demo stage: "){
+            steps {
+               echo "demo is successfull: !!"
+            }
+        }
       }
     }
-  }
 }
