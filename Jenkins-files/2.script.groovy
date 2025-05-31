@@ -1,4 +1,5 @@
 // script  block comes  under 
+// pipeline --> stages --> stage --> steps --> script
 pipeline {
     agent any
     stages {
