@@ -2,7 +2,6 @@
 // on top level we have  agent and  it  has  different options(any, none, label, node)
 pipeline {
     agent  any
-    {
       stages {
         stage ("Demo stage: "){
             steps {
@@ -11,4 +10,3 @@ pipeline {
         }
       }
     }
-}
