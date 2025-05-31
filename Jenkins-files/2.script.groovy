@@ -1,5 +1,6 @@
 // script  block comes  under 
 // pipeline --> stages --> stage --> steps --> script
+//https://www.jenkins.io/doc/pipeline/steps/workflow-basic-steps/
 pipeline {
     agent any
     stages {
