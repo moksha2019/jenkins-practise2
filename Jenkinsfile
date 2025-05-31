@@ -1,12 +1,12 @@
 pipeline {
-    agent  any
-    {
-      stages {
-        stage ("Demo stage: "){
-            steps {
-               echo "demo is successfull: !!"
+    agent any
+     {
+        stages {
+            stage ("demo phase") {
+                steps {
+                    echo "welocme  to jenkins!!"
+                }
             }
         }
-      }
-    }
+     }
 }
