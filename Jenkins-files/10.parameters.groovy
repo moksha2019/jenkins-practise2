@@ -1,7 +1,7 @@
 // The parameters directive provides a list of parameters that a user should provide when triggering the Pipeline
 // The values for these user-specified parameters are made available to Pipeline steps via the params object, refer to the Parameters
 // available parameters (string, text, booleanParam, choice, password and credentials)
-Pipeline {
+pipeline {
     agent any
     parameters {
         string{name: 'PERSON', defaultValue: 'prasad', description: "Enter your name:"}
