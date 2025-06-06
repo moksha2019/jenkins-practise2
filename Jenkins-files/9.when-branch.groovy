@@ -40,3 +40,54 @@ pipeline {
 }
 }
 
+
+// writing a  multi stage  pipeline
+pipeline {
+    agent any
+    stages {
+        stage ("Build the application:"){
+            steps {
+                echo " building the  application  completed:"
+            }
+        }
+        stage ("quality test:"){
+            steps {
+                echo " code quality  completed:"
+            }
+        }
+        stage ("pushing the  image to repo"){
+            steps {
+                echo " pushing the image  completed:"
+            }
+        }
+        stage ("Deploy to dev:"){
+            steps {
+                echo " Deploy to  dev environment  completed:"
+            }
+        stage ("Deploy to test"){
+            when {
+                branch 'release/*'
+            }
+            steps {
+                echo " Deploy to test  completed:"
+            }
+        stage ("Deploy to stage"){
+            steps {
+                echo " Deploy to stage completed"
+            }
+        stage ("Deploy to prod:"){
+            when {
+                // we should deploy the  application to production we should  with only TAG
+                // V1.1.1
+                // tag pattern: "release-\\d+", comparator: "REGEXP"
+                tag pattern: "v\\d{1,2}\\.\\d{1,2}\\.\\d{1,2}\\", comparator: "REGEXP"
+            }
+            steps {
+                echo " Deploy to production completed:"
+            }
+        }
+        }
+        }
+        }
+    }
+}
