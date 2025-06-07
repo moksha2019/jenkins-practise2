@@ -4,12 +4,12 @@
 pipeline {
     agent any
     options {
-        buildDiscarder(logRotator(numToKeepStr: '2')) }
+        buildDiscarder(logRotator(numToKeepStr: '2'))
     }
     stages {
-        stage ('Build stage'){
+        stage {
             steps {
-                echo "Build completd  successfully:"
+                echo "build  completed:"
             }
         }
     }
