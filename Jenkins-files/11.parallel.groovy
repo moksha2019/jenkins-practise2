@@ -6,10 +6,21 @@ pipeline {
     stages {
         stage ('Build stage') {
             parallel {
-                stage ('stage1')
+                stage ('stage1') {
+                    steps {
+                        echo "stage1  completed"
+                    }
+                }
+                stage ('stage2') {
+                    steps {
+                        echo "stage2 completed:"
+                    }
+                }
             }
+        }
+        stage ('sonar scan') {
             steps {
-                echo "Build completed: "
+                echo "sanning  completed: "
             }
         }
     }
